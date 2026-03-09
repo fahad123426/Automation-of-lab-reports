@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LabAI - Patient Log In</title>
+  <link rel="stylesheet" href="../Css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <header class="brand-section">
+        <div class="logo-box">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L5.05 15.207a2 2 0 01-1.478-2.613l2.25-5.626a2 2 0 011.856-1.259h10.644a2 2 0 011.856 1.259l2.25 5.626a2 2 0 01-2.95 2.534z" />
+          </svg>
+        </div>
+        <h1 class="brand-name">LabAI</h1>
+        <p class="brand-tagline">AI-Powered Laboratory Report Analysis<br><strong>Patient Portal</strong></p>
+      </header>
+
+      <form action="patient-dashboard.html" method="GET">
+        <div class="form-group">
+          <label for="email">Email / Patient ID</label>
+          <input type="text" id="email" name="email" placeholder="Enter your email or ID" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="••••••••" required>
+        </div>
+
+        <button type="submit" class="submit-btn" id="patient-sign-in">Patient Sign In</button>
+        <div style="margin-top: 24px; text-align: center;">
+          <a href="../Admin/admin-login.html" style="color: #769382; text-decoration: none; font-size: 14px; font-weight: 600;">Admin Login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

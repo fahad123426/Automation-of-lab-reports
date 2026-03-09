@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LabAI - Medical History Setup</title>
+  <link rel="stylesheet" href="../Css/style.css">
+  <link rel="stylesheet" href="../Css/forms.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="padding: 60px 20px; display: block; background-color: #F8F7F4;">
+  <div class="medical-history-card">
+    <header class="setup-header">
+      <h1>Medical History</h1>
+      <p style="color: #666;">Please provide your basic health information to personalize your analysis.</p>
+    </header>
+
+    <form action="patient-dashboard.html" method="POST">
+      <!-- Top Row: Basic Info -->
+      <div class="top-fields-grid">
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" id="age" name="age" placeholder="34" required>
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" style="width: 100%; padding: 16px; background-color: var(--input-bg); border: 1px solid transparent; border-radius: var(--input-border-radius); font-size: 16px; appearance: none; cursor: pointer;">
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="blood-group">Blood Group</label>
+          <select id="blood-group" name="blood_group" style="width: 100%; padding: 16px; background-color: var(--input-bg); border: 1px solid transparent; border-radius: var(--input-border-radius); font-size: 16px; appearance: none; cursor: pointer;">
+            <option value="">Select</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Existing Conditions -->
+      <div class="history-section">
+        <h3>Existing Conditions</h3>
+        <div class="checkbox-grid">
+          <label class="check-item"><input type="checkbox" name="condition" value="diabetes"><span>Diabetes</span></label>
+          <label class="check-item"><input type="checkbox" name="condition" value="hypertension"><span>Hypertension</span></label>
+          <label class="check-item"><input type="checkbox" name="condition" value="heart_disease"><span>Heart Disease</span></label>
+          <label class="check-item"><input type="checkbox" name="condition" value="asthma"><span>Asthma</span></label>
+          <label class="check-item"><input type="checkbox" name="condition" value="thyroid"><span>Thyroid Disorder</span></label>
+          <label class="check-item"><input type="checkbox" name="condition" value="cancer"><span>Cancer</span></label>
+          <label class="check-item"><input type="checkbox" name="condition" value="kidney"><span>Kidney Disease</span></label>
+        </div>
+      </div>
+
+      <!-- Allergies -->
+      <div class="history-section">
+        <h3>Allergies</h3>
+        <div class="checkbox-grid">
+          <label class="check-item"><input type="checkbox" name="allergy" value="penicillin"><span>Penicillin</span></label>
+          <label class="check-item"><input type="checkbox" name="allergy" value="sulfa"><span>Sulfa Drugs</span></label>
+          <label class="check-item"><input type="checkbox" name="allergy" value="aspirin"><span>Aspirin</span></label>
+          <label class="check-item"><input type="checkbox" name="allergy" value="latex"><span>Latex</span></label>
+          <label class="check-item"><input type="checkbox" name="allergy" value="pollen"><span>Pollen</span></label>
+          <label class="check-item"><input type="checkbox" name="allergy" value="dust"><span>Dust</span></label>
+          <label class="check-item"><input type="checkbox" name="allergy" value="none"><span>None</span></label>
+        </div>
+      </div>
+
+      <!-- Family History -->
+      <div class="history-section">
+        <h3>Family History</h3>
+        <div class="checkbox-grid">
+          <label class="check-item"><input type="checkbox" name="family" value="diabetes"><span>Diabetes</span></label>
+          <label class="check-item"><input type="checkbox" name="family" value="heart_disease"><span>Heart Disease</span></label>
+          <label class="check-item"><input type="checkbox" name="family" value="cancer"><span>Cancer</span></label>
+          <label class="check-item"><input type="checkbox" name="family" value="stroke"><span>Stroke</span></label>
+          <label class="check-item"><input type="checkbox" name="family" value="alzheimers"><span>Alzheimer's</span></label>
+          <label class="check-item"><input type="checkbox" name="family" value="none"><span>None</span></label>
+        </div>
+      </div>
+
+      <!-- Additional Notes -->
+      <div class="history-section">
+        <h3>Additional Notes</h3>
+        <textarea name="notes" class="notes-area" placeholder="Any other medical information you'd like to share..."></textarea>
+      </div>
+
+      <div style="margin-top: 40px; display: flex; justify-content: flex-end;">
+        <button type="submit" class="submit-btn" style="width: auto; padding: 16px 48px;">Complete Setup & Go to Dashboard</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

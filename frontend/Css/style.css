@@ -1,0 +1,149 @@
+:root {
+  --deep-slate: #36565F;
+  --ocean-steel: #5F8190;
+  --cloud-mist: #E2F0F0;
+  --pure-white: #FFFFFF;
+  --jet-black: #141414;
+  
+  --bg-color: #F8FAFA;
+  --card-bg: var(--pure-white);
+  --primary-color: var(--deep-slate);
+  --accent-color: var(--ocean-steel);
+  --input-bg: #F1F6F6;
+  --text-dark: var(--jet-black);
+  --text-muted: #627C85;
+  --border-radius: 20px;
+  --input-border-radius: 14px;
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --box-shadow: 0 10px 30px rgba(54, 86, 95, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: var(--text-dark);
+}
+
+.login-container {
+  width: 100%;
+  max-width: 440px;
+  padding: 20px;
+}
+
+.login-card {
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.brand-section {
+  margin-bottom: 32px;
+}
+
+.logo-box {
+  background: linear-gradient(135deg, var(--deep-slate), var(--ocean-steel));
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 16px;
+  box-shadow: 0 8px 16px rgba(54, 86, 95, 0.2);
+}
+
+.logo-box svg {
+  width: 32px;
+  height: 32px;
+  color: var(--pure-white);
+}
+
+.brand-name {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #2D3436;
+}
+
+.brand-tagline {
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text-dark);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 16px;
+  background-color: var(--input-bg);
+  border: 1px solid transparent;
+  border-radius: var(--input-border-radius);
+  font-size: 16px;
+  transition: var(--transition);
+}
+
+.form-group input:focus {
+  outline: none;
+  background-color: var(--pure-white);
+  border-color: var(--ocean-steel);
+  box-shadow: 0 0 0 4px rgba(95, 129, 144, 0.1);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--deep-slate), var(--ocean-steel));
+  color: var(--pure-white);
+  border: none;
+  border-radius: var(--input-border-radius);
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 8px;
+  box-shadow: 0 4px 12px rgba(54, 86, 95, 0.15);
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(54, 86, 95, 0.25);
+  filter: brightness(1.1);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 32px 24px;
+  }
+  
+  .brand-name {
+    font-size: 28px;
+  }
+}

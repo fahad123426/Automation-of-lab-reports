@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LabAI - Patient Management</title>
+  <link rel="stylesheet" href="../Css/style.css">
+  <link rel="stylesheet" href="../Css/dashboard.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="../Js/search.js" defer></script>
+</head>
+<body>
+  <div class="dashboard-wrapper">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2 class="brand-name-sidebar">LabAI</h2>
+        <p style="font-size: 12px; color: rgba(255,255,255,0.6);">Laboratory reports automation</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="admin-dashboard.html" class="nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+          Dashboard
+        </a>
+        <a href="patients.html" class="nav-item active">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          Patients
+        </a>
+        <a href="doctors.html" class="nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+          </svg>
+          Show All Doctors
+        </a>
+        <a href="upload-report.html" class="nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+          </svg>
+          Upload Report
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="admin-login.html" class="nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+          </svg>
+          Logout
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="top-bar">
+        <div class="top-bar-left">
+          <h1>Patients</h1>
+        </div>
+        <div class="top-bar-right">
+          <div class="admin-info">
+            <span style="font-weight: 500; font-size: 15px;">Admin Fahad</span>
+            <div class="admin-avatar">AF</div>
+          </div>
+        </div>
+      </header>
+
+      <div class="content-section">
+        <div class="section-header">
+          <div style="display: flex; align-items: center; background-color: #F1F1F1; padding: 10px 16px; border-radius: 12px; width: 300px;">
+            <svg xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px; color: #666; margin-right: 12px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input type="text" id="tableSearchInput" placeholder="Search patients..." style="border: none; background: transparent; outline: none; width: 100%; font-size: 14px;">
+          </div>
+          <a href="add-patient.html" class="submit-btn" style="width: auto; padding: 12px 24px; text-decoration: none; font-size: 14px;">+ Add New Patient</a>
+        </div>
+
+        <table class="data-table" id="dataTable">
+          <thead>
+            <tr>
+              <th>Patient Name</th>
+              <th>Email Address</th>
+              <th>Total Reports</th>
+              <th>Last Visit</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="font-weight: 600;">Ayesha Khan</td>
+              <td>ayesha.k@example.pk</td>
+              <td>12</td>
+              <td>Mar 8, 2026</td>
+              <td><a href="patient-view.html" style="color: #769382; font-weight: 600; text-decoration: none;">View Profile</a></td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600;">Muhammad Bilal</td>
+              <td>m.bilal@outlook.com</td>
+              <td>5</td>
+              <td>Mar 8, 2026</td>
+              <td><a href="patient-view.html" style="color: #769382; font-weight: 600; text-decoration: none;">View Profile</a></td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600;">Zainab Malik</td>
+              <td>zainab.m@tech.com.pk</td>
+              <td>8</td>
+              <td>Mar 7, 2026</td>
+              <td><a href="patient-view.html" style="color: #769382; font-weight: 600; text-decoration: none;">View Profile</a></td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600;">Omar Farooq</td>
+              <td>o.farooq@health.edu.pk</td>
+              <td>2</td>
+              <td>Mar 7, 2026</td>
+              <td><a href="patient-view.html" style="color: #769382; font-weight: 600; text-decoration: none;">View Profile</a></td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600;">Fatima Zahra</td>
+              <td>fatima.z@gmail.com</td>
+              <td>15</td>
+              <td>Mar 5, 2026</td>
+              <td><a href="patient-view.html" style="color: #769382; font-weight: 600; text-decoration: none;">View Profile</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

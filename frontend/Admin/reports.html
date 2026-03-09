@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LabAI - Upload Report</title>
+  <title>LabAI - All Reports</title>
   <link rel="stylesheet" href="../Css/style.css">
   <link rel="stylesheet" href="../Css/dashboard.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="../Js/search.js" defer></script>
 </head>
 <body>
   <div class="dashboard-wrapper">
@@ -60,48 +61,64 @@
     <main class="main-content">
       <header class="top-bar">
         <div class="top-bar-left">
-          <h1>Upload Report</h1>
-        </div>
-        <div class="top-bar-right">
-          <div class="admin-info">
-            <span style="font-weight: 500; font-size: 15px;">Admin Fahad</span>
-            <div class="admin-avatar">AF</div>
-          </div>
+          <h1 style="font-size: 32px; font-weight: 700; color: #2D3436;">All Analyzed Reports</h1>
         </div>
       </header>
 
-      <div class="content-section" style="max-width: 800px;">
+      <div class="content-section">
         <div class="section-header">
-          <h2 class="section-title">Report Details</h2>
+          <div style="display: flex; gap: 16px; align-items: center;">
+            <input type="text" id="tableSearchInput" placeholder="Search by patient or test..." style="padding: 10px 16px; border-radius: 12px; border: 1px solid #E0E0E0; width: 350px;">
+            <select id="severityFilter" style="padding: 10px 16px; border-radius: 12px; border: 1px solid #E0E0E0; background: white; outline: none;">
+              <option value="">All Severities</option>
+              <option value="normal">Normal</option>
+              <option value="moderate">Moderate</option>
+              <option value="high">High Risk</option>
+            </select>
+          </div>
         </div>
-        
-        <form action="../Patient/analysis.html" method="GET" enctype="multipart/form-data">
-          <div class="form-group">
-            <label for="p-select">Select Patient</label>
-            <input type="text" id="p-select" name="patient_search" list="patient-list" placeholder="Search by name or email..." required style="width: 100%; padding: 16px; background-color: var(--input-bg); border: 1px solid transparent; border-radius: var(--input-border-radius); font-size: 16px;">
-            <datalist id="patient-list">
-              <option value="Ayesha Khan (ID: #LB-0042)"></option>
-              <option value="Muhammad Bilal (ID: #LB-0045)"></option>
-              <option value="Zainab Malik (ID: #LB-0048)"></option>
-              <option value="Omar Farooq (ID: #LB-0050)"></option>
-            </datalist>
-          </div>
 
-          <div class="form-group">
-            <label for="file-upload">Upload Lab Report (PDF/Image)</label>
-            <div style="border: 2px dashed #769382; border-radius: 12px; padding: 40px; text-align: center; background-color: rgba(118, 147, 130, 0.05); transition: var(--transition);">
-              <svg xmlns="http://www.w3.org/2000/svg" style="width: 48px; height: 48px; color: #769382; margin-bottom: 16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-              </svg>
-              <p style="margin-bottom: 12px; font-weight: 600;">Drag and drop file here</p>
-              <p style="font-size: 14px; color: #666; margin-bottom: 24px;">or click to browse your computer</p>
-              <input type="file" id="file-upload" name="report" style="display: none;" onchange="this.form.submit()">
-              <button type="button" class="submit-btn" style="width: auto; padding: 12px 24px;" onclick="document.getElementById('file-upload').click()">Select File</button>
-            </div>
-          </div>
-
-          <button type="submit" class="submit-btn" style="margin-top: 16px;">Initiate AI Analysis</button>
-        </form>
+        <table class="data-table" id="dataTable">
+          <thead>
+            <tr>
+              <th>Patient</th>
+              <th>Test Type</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="font-weight: 500;">Sarah Johnson</td>
+              <td>Complete Blood Count</td>
+              <td>Mar 8, 2026</td>
+              <td><span class="status-badge status-normal">Normal</span></td>
+              <td><a href="../Patient/analysis.html" style="color: #769382; font-weight: 600; text-decoration: none;">View Analysis</a></td>
+            </tr>
+            <tr>
+              <td style="font-weight: 500;">Mike Chen</td>
+              <td>Lipid Panel</td>
+              <td>Mar 8, 2026</td>
+              <td><span class="status-badge status-moderate">Moderate</span></td>
+              <td><a href="../Patient/analysis.html" style="color: #769382; font-weight: 600; text-decoration: none;">View Analysis</a></td>
+            </tr>
+            <tr>
+              <td style="font-weight: 500;">Emily Davis</td>
+              <td>Thyroid Function</td>
+              <td>Mar 7, 2026</td>
+              <td><span class="status-badge status-high">High Risk</span></td>
+              <td><a href="../Patient/analysis.html" style="color: #769382; font-weight: 600; text-decoration: none;">View Analysis</a></td>
+            </tr>
+            <tr>
+              <td style="font-weight: 500;">James Wilson</td>
+              <td>Liver Function</td>
+              <td>Mar 7, 2026</td>
+              <td><span class="status-badge status-normal">Normal</span></td>
+              <td><a href="../Patient/analysis.html" style="color: #769382; font-weight: 600; text-decoration: none;">View Analysis</a></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </main>
   </div>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LabAI - Patient Profile</title>
+  <link rel="stylesheet" href="../Css/style.css">
+  <link rel="stylesheet" href="../Css/dashboard.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="dashboard-wrapper">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2 class="brand-name-sidebar">LabAI</h2>
+        <p style="font-size: 12px; color: rgba(255,255,255,0.6);">Laboratory reports automation</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="admin-dashboard.html" class="nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+          Dashboard
+        </a>
+        <a href="patients.html" class="nav-item active">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          Patients
+        </a>
+        <a href="upload-report.html" class="nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+          </svg>
+          Upload Report
+        </a>
+        <a href="add-doctor.html" class="nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+          </svg>
+          Add Doctor
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="admin-login.html" class="nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+          </svg>
+          Logout
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="top-bar">
+        <div class="top-bar-left" style="display: flex; align-items: center; gap: 16px;">
+          <a href="patients.html" style="color: #666;">
+            <svg xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+          </a>
+          <h1>Patient Profile</h1>
+        </div>
+        <div class="top-bar-right">
+          <div class="admin-info">
+            <span style="font-weight: 500; font-size: 15px;">Admin Fahad</span>
+            <div class="admin-avatar">AF</div>
+          </div>
+        </div>
+      </header>
+
+      <div style="display: grid; grid-template-columns: 350px 1fr; gap: 32px;">
+        <!-- Left Column: Patient Details -->
+        <div class="content-section">
+          <div style="text-align: center; margin-bottom: 32px;">
+            <div style="width: 100px; height: 100px; background-color: #769382; color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 36px; font-weight: 700; margin: 0 auto 16px;">AK</div>
+            <h2 style="font-size: 24px; margin-bottom: 4px;">Ayesha Khan</h2>
+            <p style="color: #666; font-size: 14px;">Patient ID: #LB-2026-0042</p>
+          </div>
+
+          <div style="border-top: 1px solid #F1F1F1; padding-top: 24px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">
+              <div>
+                <p style="font-size: 11px; font-weight: 600; color: #999; text-transform: uppercase;">Age</p>
+                <p style="font-weight: 500;">34</p>
+              </div>
+              <div>
+                <p style="font-size: 11px; font-weight: 600; color: #999; text-transform: uppercase;">Blood</p>
+                <p style="font-weight: 500;">O+</p>
+              </div>
+            </div>
+            <div style="margin-bottom: 20px;">
+              <p style="font-size: 11px; font-weight: 600; color: #999; text-transform: uppercase;">Existing Conditions</p>
+              <p style="font-size: 13px; margin-top: 4px;">Diabetes, Hypertension</p>
+            </div>
+            <div style="margin-bottom: 20px;">
+              <p style="font-size: 11px; font-weight: 600; color: #999; text-transform: uppercase;">Allergies</p>
+              <p style="font-size: 13px; margin-top: 4px;">Penicillin, Pollen</p>
+            </div>
+            <div style="margin-bottom: 24px;">
+              <p style="font-size: 11px; font-weight: 600; color: #999; text-transform: uppercase;">Additional Notes</p>
+              <p style="font-size: 13px; line-height: 1.6; color: #555;">History of seasonal allergies. Currently on supplements.</p>
+            </div>
+            <!-- Simplified Upload Form -->
+            <div style="margin-top: 16px;">
+              <p style="font-size: 11px; font-weight: 600; color: #999; text-transform: uppercase; margin-bottom: 12px;">Quick Upload Report</p>
+              <form action="../Patient/analysis.html" method="GET">
+                <div style="border: 2px dashed #769382; border-radius: 12px; padding: 20px; text-align: center; background-color: rgba(118, 147, 130, 0.05); cursor: pointer;" onclick="document.getElementById('profile-file-upload').click()">
+                  <svg xmlns="http://www.w3.org/2000/svg" style="width: 32px; height: 32px; color: #769382; margin-bottom: 8px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                  </svg>
+                  <p style="font-size: 12px; font-weight: 600; color: #405047;">Click to upload file</p>
+                  <input type="file" id="profile-file-upload" style="display: none;" onchange="this.form.submit()">
+                </div>
+                <button type="submit" class="submit-btn" style="width: 100%; margin-top: 12px; font-size: 14px; padding: 12px;">Initiate AI Analysis</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Reports List -->
+        <div class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Analysis History</h2>
+          </div>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Report Name</th>
+                <th>Date</th>
+                <th>Result</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight: 600;">Complete Blood Count</td>
+                <td>Mar 8, 2026</td>
+                <td><span class="status-badge status-normal">Normal</span></td>
+                <td><a href="../Patient/analysis.html" style="color: #769382; font-weight: 600; text-decoration: none;">View AI Analysis</a></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600;">Metabolic Panel</td>
+                <td>Feb 12, 2026</td>
+                <td><span class="status-badge status-moderate">Moderate</span></td>
+                <td><a href="../Patient/analysis.html" style="color: #769382; font-weight: 600; text-decoration: none;">View AI Analysis</a></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600;">Urinalysis</td>
+                <td>Jan 05, 2026</td>
+                <td><span class="status-badge status-normal">Normal</span></td>
+                <td><a href="../Patient/analysis.html" style="color: #769382; font-weight: 600; text-decoration: none;">View AI Analysis</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

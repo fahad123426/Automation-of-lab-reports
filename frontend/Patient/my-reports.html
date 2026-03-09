@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LabAI - My Reports</title>
+  <link rel="stylesheet" href="../Css/style.css">
+  <link rel="stylesheet" href="../Css/dashboard.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="../Js/search.js" defer></script>
+</head>
+<body>
+  <div class="dashboard-wrapper">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2 class="brand-name-sidebar" style="color: white; font-size: 24px; font-weight: 700;">LabAI</h2>
+        <p style="font-size: 12px; color: rgba(255,255,255,0.6);">Laboratory reports automation</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="patient-dashboard.html" class="nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+          Dashboard
+        </a>
+        <a href="my-reports.html" class="nav-item active">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          My Reports
+        </a>
+        <a href="upload-report.html" class="nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+          </svg>
+          Upload Report
+        </a>
+        <a href="doctors.html" class="nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          Find Doctors
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="patient-login.html" class="nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+          </svg>
+          Logout
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="top-bar">
+        <div class="top-bar-left">
+          <h1 style="font-size: 32px; font-weight: 700; color: #2D3436;">My Reports</h1>
+        </div>
+        <div class="top-bar-right">
+          <div style="display: flex; align-items: center; background-color: #FFFFFF; padding: 10px 16px; border-radius: 12px; width: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+            <svg xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px; color: #666; margin-right: 12px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input type="text" id="cardSearchInput" placeholder="Search reports..." style="border: none; background: transparent; outline: none; width: 100%; font-size: 14px;">
+          </div>
+        </div>
+      </header>
+
+      <div class="reports-container" id="cardContainer" style="max-width: 1000px;">
+        <!-- Report Card 1 -->
+        <a href="analysis.html" class="report-card-full">
+          <div class="report-card-left">
+            <div class="report-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width: 24px; height: 24px;">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <div class="report-info">
+              <h3>Complete Blood Count</h3>
+              <p>Mar 8, 2026</p>
+            </div>
+          </div>
+          <span class="status-badge status-normal">Normal</span>
+        </a>
+
+        <!-- Report Card 2 -->
+        <a href="analysis.html" class="report-card-full">
+          <div class="report-card-left">
+            <div class="report-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width: 24px; height: 24px;">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <div class="report-info">
+              <h3>Lipid Panel</h3>
+              <p>Feb 20, 2026</p>
+            </div>
+          </div>
+          <span class="status-badge status-moderate">Moderate</span>
+        </a>
+
+        <!-- Report Card 3 -->
+        <a href="analysis.html" class="report-card-full">
+          <div class="report-card-left">
+            <div class="report-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width: 24px; height: 24px;">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <div class="report-info">
+              <h3>Thyroid Function</h3>
+              <p>Jan 15, 2026</p>
+            </div>
+          </div>
+          <span class="status-badge status-normal">Normal</span>
+        </a>
+
+        <!-- Report Card 4 -->
+        <a href="analysis.html" class="report-card-full">
+          <div class="report-card-left">
+            <div class="report-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width: 24px; height: 24px;">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <div class="report-info">
+              <h3>Liver Function</h3>
+              <p>Dec 10, 2025</p>
+            </div>
+          </div>
+          <span class="status-badge status-high">High Risk</span>
+        </a>
+
+        <!-- Report Card 5 -->
+        <a href="analysis.html" class="report-card-full">
+          <div class="report-card-left">
+            <div class="report-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width: 24px; height: 24px;">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <div class="report-info">
+              <h3>HbA1c</h3>
+              <p>Nov 5, 2025</p>
+            </div>
+          </div>
+          <span class="status-badge status-normal">Normal</span>
+        </a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

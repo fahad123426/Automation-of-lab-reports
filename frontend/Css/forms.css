@@ -1,0 +1,115 @@
+/* Medical History Form Specific Styles */
+.form-wrapper {
+  background-color: #F8FAFA;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.medical-history-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--pure-white);
+  padding: 48px;
+  border-radius: 24px;
+  box-shadow: var(--box-shadow);
+  border: 1px solid rgba(148, 178, 192, 0.1);
+}
+
+.history-section {
+  margin-bottom: 32px;
+}
+
+.history-section h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--deep-slate);
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--cloud-mist);
+  padding-bottom: 8px;
+}
+
+.top-fields-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 8px 12px;
+  background-color: transparent;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.check-item:hover {
+  background-color: var(--cloud-mist);
+}
+
+.check-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--deep-slate);
+}
+
+.check-item span {
+  font-size: 15px;
+  color: #555;
+  font-weight: 500;
+}
+
+.notes-area {
+  width: 100%;
+  min-height: 100px;
+  padding: 16px;
+  background-color: var(--input-bg);
+  border: 1px solid transparent;
+  border-radius: var(--input-border-radius);
+  font-size: 15px;
+  resize: vertical;
+  transition: var(--transition);
+}
+
+.notes-area:focus {
+  outline: none;
+  background-color: var(--pure-white);
+  border-color: var(--ocean-steel);
+  box-shadow: 0 0 0 4px rgba(95, 129, 144, 0.1);
+}
+
+.setup-header {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.setup-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--deep-slate);
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .top-fields-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .medical-history-card {
+    padding: 24px;
+  }
+}

@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LabAI - Add Doctor</title>
+  <title>LabAI - Edit Doctor</title>
   <link rel="stylesheet" href="../Css/style.css">
   <link rel="stylesheet" href="../Css/dashboard.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="dashboard-wrapper">
@@ -60,7 +60,7 @@
     <main class="main-content">
       <header class="top-bar">
         <div class="top-bar-left">
-          <h1 style="font-size: 32px; font-weight: 700; color: #2D3436;">Add Doctor</h1>
+          <h1 style="font-size: 32px; font-weight: 700; color: #2D3436;">Edit Doctor Profile</h1>
         </div>
       </header>
 
@@ -70,11 +70,11 @@
           <div class="form-grid-2">
             <div class="form-group">
               <label for="first-name">First Name</label>
-              <input type="text" id="first-name" name="first_name" placeholder="Dr. First Name" required>
+              <input type="text" id="first-name" name="first_name" placeholder="Dr. First Name" value="Priya" required>
             </div>
             <div class="form-group">
               <label for="last-name">Last Name</label>
-              <input type="text" id="last-name" name="last_name" placeholder="Last Name" required>
+              <input type="text" id="last-name" name="last_name" placeholder="Last Name" value="Sharma" required>
             </div>
           </div>
 
@@ -83,7 +83,7 @@
             <label for="specialization">Specialization</label>
             <select id="specialization" name="specialization" style="width: 100%; padding: 16px; background-color: var(--input-bg); border: 1px solid transparent; border-radius: var(--input-border-radius); font-size: 16px; appearance: none; cursor: pointer;">
               <option value="">Select specialization</option>
-              <option value="endocrinology">Endocrinology</option>
+              <option value="endocrinology" selected>Endocrinology</option>
               <option value="cardiology">Cardiology</option>
               <option value="internal_medicine">Internal Medicine</option>
               <option value="neurology">Neurology</option>
@@ -94,18 +94,18 @@
           <!-- Hospital -->
           <div class="form-group">
             <label for="hospital">Hospital / Clinic</label>
-            <input type="text" id="hospital" name="hospital" placeholder="e.g., City General Hospital" required>
+            <input type="text" id="hospital" name="hospital" placeholder="e.g., City General Hospital" value="City General Hospital" required>
           </div>
 
           <!-- Row 2: Contact -->
           <div class="form-grid-2">
             <div class="form-group">
               <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone" placeholder="+1 555-0000" required>
+              <input type="tel" id="phone" name="phone" placeholder="+1 555-0000" value="+1 555-0123" required>
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="doctor@hospital.com" required>
+              <input type="email" id="email" name="email" placeholder="doctor@hospital.com" value="p.sharma@hospital.com" required>
             </div>
           </div>
 
@@ -113,9 +113,9 @@
           <div style="display: flex; gap: 16px; margin-top: 32px;">
             <button type="submit" class="submit-btn" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;">
               <svg style="width: 20px; height: 20px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-              Add Doctor
+              Save Changes
             </button>
             <button type="button" class="btn-secondary" style="width: 120px;" onclick="location.href='doctors.html'">Cancel</button>
           </div>
